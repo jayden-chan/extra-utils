@@ -17,3 +17,4 @@ cargo install extra-utils
 Append a timestamp to each line in STDIN
 
 Usage: `your_command | ts [format]`
+The default format is "[%Y-%m-%d %H:%M:%S]"
