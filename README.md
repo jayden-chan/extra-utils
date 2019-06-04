@@ -4,7 +4,7 @@ This repository contains some handy command line utilities that aren't included 
 GNU coreutils. They follow the same UNIX philosophy.
 
 A lot of the tools here already exist in other languages/packages. The purpose of this
-project project is more for fun/learning than it is for actual innovation/utility.
+project is more for fun/learning than it is for actual innovation/utility.
 
 ## Installation
 ```
