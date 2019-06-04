@@ -16,6 +16,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "extra-utils"
+version = "0.1.0"
+dependencies = [
+ "chrono 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -50,13 +57,6 @@ dependencies = [
  "libc 0.2.58 (registry+https://github.com/rust-lang/crates.io-index)",
  "redox_syscall 0.1.54 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi 0.3.7 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "utils"
-version = "0.1.0"
-dependencies = [
- "chrono 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
