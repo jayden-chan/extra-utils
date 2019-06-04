@@ -9,12 +9,22 @@ fn main() {
         .nth(1)
         .unwrap_or("%Y-%m-%d %H:%M:%S".to_string());
 
-    for line in io::stdin().lock().lines() {
-        match line {
-            Ok(l) => {
-                println!("[{}] {}", Local::now().format(&pattern), l);
+    if pattern == "--help" || pattern == "-h" {
+        println!("ts - Append a timestamp to STDIN");
+        println!();
+        println!("Usage:");
+        println!("    <your command> | ts [format]");
+        println!();
+        println!("Options:");
+        println!("    [format]   The format of the timestamp");
+    } else {
+        for line in io::stdin().lock().lines() {
+            match line {
+                Ok(l) => {
+                    println!("[{}] {}", Local::now().format(&pattern), l);
+                }
+                Err(error) => print!("error: {}", error),
             }
-            Err(error) => print!("error: {}", error),
         }
     }
 }
