@@ -4,6 +4,11 @@ version = "0.1.0"
 authors = ["Jayden Chan <jaydencn7@gmail.com>"]
 edition = "2018"
 
+[[bin]]
+name = "ts"
+path = "src/ts.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = "0.4.6"
