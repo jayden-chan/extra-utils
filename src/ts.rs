@@ -10,7 +10,7 @@ fn main() {
         .unwrap_or("[%Y-%m-%d %H:%M:%S]".to_string());
 
     if pattern == "--help" || pattern == "-h" {
-        println!("ts - Append a timestamp to each line in STDIN");
+        println!("ts - Prepend a timestamp to each line in STDIN");
         println!();
         println!("Usage:");
         println!("    <your command> | ts [format]");
