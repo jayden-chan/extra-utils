@@ -28,3 +28,12 @@ Usage: `your_command | nth <start> [end]`
 Where `start` is the starting line to print, and `end` is the optional end index to
 print. If `end` is omitted or is less than `start`, only the `start`'th line will be
 printed
+
+### nr
+Prepend line line numbers to STDIN
+
+Usage: `your_command | nr [minwidth] [offset]`
+
+`minwidth` is the minimum width of the number column. Default: 0
+
+`offset` is the starting index of the line numbers. Default: 1
