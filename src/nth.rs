@@ -3,7 +3,7 @@ use std::io::BufRead;
 use std::process;
 
 fn main() {
-    let first_arg = std::env::args().nth(1).unwrap_or("--help".to_string());
+    let first_arg = std::env::args().nth(1).unwrap_or(String::from("0"));
 
     if first_arg == "--help" || first_arg == "-h" {
         println!("nth - Select the nth line(s) from STDIN");
