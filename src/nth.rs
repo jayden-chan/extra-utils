@@ -15,7 +15,7 @@ fn main() {
         println!("    start          The start index of lines to print.");
         println!("                   If this is the only argument, only the start'th line will be printed");
         println!("");
-        println!("    end            The end index to print");
+        println!("    end            The end index to print. Supplying any number less than `start` will have no effect.");
     } else {
         let first_arg = first_arg.parse::<u32>();
 
@@ -37,7 +37,7 @@ fn main() {
                             Ok(l) => {
                                 println!("{}", l);
 
-                                if ctr == end_idx {
+                                if ctr >= end_idx {
                                     process::exit(0);
                                 }
                             }

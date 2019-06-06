@@ -26,4 +26,5 @@ Select the nth line(s) from STDIN
 Usage: `your_command | nth <start> [end]`
 
 Where `start` is the starting line to print, and `end` is the optional end index to
-print. If `end` is omitted, only the `start`'th line will be printed
+print. If `end` is omitted or is less than `start`, only the `start`'th line will be
+printed
