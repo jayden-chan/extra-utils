@@ -14,7 +14,7 @@ cargo install extra-utils
 ## Commands
 
 ### ts
-Append a timestamp to each line in STDIN
+Prepend a timestamp to each line in STDIN
 
 Usage: `your_command | ts [format]`
 
