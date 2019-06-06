@@ -13,12 +13,17 @@ edition = "2018"
 license = "MIT"
 
 [[bin]]
-name = "ts"
-path = "src/ts.rs"
+name = "nr"
+path = "src/nr.rs"
 
 [[bin]]
 name = "nth"
 path = "src/nth.rs"
+
+[[bin]]
+name = "ts"
+path = "src/ts.rs"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
