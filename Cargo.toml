@@ -1,6 +1,6 @@
 [package]
 name = "extra-utils"
-version = "0.5.1"
+version = "0.5.2"
 description = "Set of additional command line utilities"
 
 homepage = "https://github.com/jayden-chan/extra-utils/README.md"
