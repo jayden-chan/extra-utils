@@ -13,6 +13,13 @@ cargo install extra-utils
 
 ## Commands
 
+### st
+A simple HTTP server that serves a static folder
+
+Usage: `st [port] [folder]`
+
+The default port is 3000 and the default folder is `.` (current folder)
+
 ### ts
 Prepend a timestamp to each line in STDIN
 
