@@ -38,9 +38,9 @@ fn poor_mans_static_server(req: Request<Body>, folder: &str) -> BoxFut {
             let fs_path = match path {
                 "" | "/" => format!("{}/index.html", folder),
                 _ => {
-                    if !path.contains(".") {
+                    if !path.contains('.') {
                         format!("{}{}/index.html", folder, path)
-                    } else if path.ends_with("/") {
+                    } else if path.ends_with('/') {
                         format!("{}{}index.html", folder, path)
                     } else {
                         format!("{}{}", folder, path)

@@ -2,7 +2,7 @@ use std::io;
 use std::io::BufRead;
 
 fn main() {
-    let first_arg = std::env::args().nth(1).unwrap_or(String::from("0"));
+    let first_arg = std::env::args().nth(1).unwrap_or_else(|| String::from("0"));
 
     if first_arg == "--help" || first_arg == "-h" {
         println!("nr - Prepend line numbers to STDIN");
@@ -21,7 +21,7 @@ fn main() {
     let width = first_arg.parse::<usize>().unwrap_or(0);
     let mut ctr = std::env::args()
         .nth(2)
-        .unwrap_or(String::from("1"))
+        .unwrap_or_else(|| String::from("1"))
         .parse::<i32>()
         .unwrap_or(1);
 
