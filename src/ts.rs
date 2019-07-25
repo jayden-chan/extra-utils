@@ -18,14 +18,15 @@ fn main() {
         println!("Options:");
         println!("    [format]   The format of the timestamp");
         println!("               The default format is [%Y-%m-%d %H:%M:%S]");
-    } else {
-        for line in io::stdin().lock().lines() {
-            match line {
-                Ok(l) => {
-                    println!("{} {}", Local::now().format(&pattern), l);
-                }
-                Err(error) => print!("error: {}", error),
+        return;
+    }
+
+    for line in io::stdin().lock().lines() {
+        match line {
+            Ok(l) => {
+                println!("{} {}", Local::now().format(&pattern), l);
             }
+            Err(error) => print!("error: {}", error),
         }
     }
 }

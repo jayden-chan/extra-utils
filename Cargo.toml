@@ -24,8 +24,15 @@ path = "src/nth.rs"
 name = "ts"
 path = "src/ts.rs"
 
+[[bin]]
+name = "st"
+path = "src/st.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 chrono = "0.4.6"
+futures = "*"
+hyper = "*"
+lazy_static = "*"
+maplit = "*"

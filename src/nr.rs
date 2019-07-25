@@ -15,23 +15,24 @@ fn main() {
         println!("                  Select 0 for no minimum width");
         println!();
         println!("    [offset]      Starting line index. Default is 1");
-    } else {
-        let width = first_arg.parse::<usize>().unwrap_or(0);
-        let mut ctr = std::env::args()
-            .nth(2)
-            .unwrap_or(String::from("1"))
-            .parse::<i32>()
-            .unwrap_or(1);
+        return;
+    }
 
-        for line in io::stdin().lock().lines() {
-            match line {
-                Ok(l) => {
-                    println!("{ctr:<width$} {line}", ctr = ctr, line = l, width = width);
-                }
-                Err(error) => print!("error: {}", error),
+    let width = first_arg.parse::<usize>().unwrap_or(0);
+    let mut ctr = std::env::args()
+        .nth(2)
+        .unwrap_or(String::from("1"))
+        .parse::<i32>()
+        .unwrap_or(1);
+
+    for line in io::stdin().lock().lines() {
+        match line {
+            Ok(l) => {
+                println!("{ctr:<width$} {line}", ctr = ctr, line = l, width = width);
             }
-
-            ctr += 1;
+            Err(error) => print!("error: {}", error),
         }
+
+        ctr += 1;
     }
 }
