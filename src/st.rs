@@ -55,12 +55,15 @@ fn poor_mans_static_server(req: Request<Body>, folder: &str) -> BoxFut {
                 return Box::new(future::ok(response));
             }
 
-            // Set content type here...
-            let path_creator = fs_path.clone();
-            let as_path = Path::new(&path_creator);
+            let fallback = format!("{}/404.html", folder);
+            let as_path = if Path::new(&fs_path).is_file() {
+                Path::new(&fs_path)
+            } else {
+                Path::new(&fallback)
+            };
 
             if as_path.is_file() {
-                let text = vec![std::fs::read(fs_path).unwrap()];
+                let text = vec![std::fs::read(as_path).unwrap()];
 
                 if let Some(extension) = as_path.extension() {
                     if let Some(non_html_mime) = MIME_BY_EXTENSION.get(extension.to_str().unwrap())
@@ -108,7 +111,15 @@ fn main() {
     }
 
     let port = first_arg.parse::<u16>().unwrap_or(3000);
-    let folder = std::env::args().nth(2).unwrap_or_else(|| String::from("."));
+
+    let folder_arg = match first_arg.parse::<u16>() {
+        Ok(_) => 2,
+        Err(_) => 1,
+    };
+
+    let folder = std::env::args()
+        .nth(folder_arg)
+        .unwrap_or_else(|| String::from("."));
     let folder_arc = Arc::new(folder.clone());
 
     let server = Server::bind(&([127, 0, 0, 1], port).into())
