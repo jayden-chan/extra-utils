@@ -1,4 +1,4 @@
-# extra-utils
+# extra-utils ![Crates.io](https://img.shields.io/crates/v/extra-utils?style=flat-square)
 
 This repository contains some handy command line utilities that aren't included in the
 GNU coreutils. They follow the UNIX philosophy.
