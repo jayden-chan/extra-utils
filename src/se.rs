@@ -27,7 +27,7 @@ lazy_static! {
 }
 
 // Just a simple type alias
-type BoxFut = Box<Future<Item = Response<Body>, Error = hyper::Error> + Send>;
+type BoxFut = Box<dyn Future<Item = Response<Body>, Error = hyper::Error> + Send>;
 
 fn poor_mans_static_server(req: Request<Body>, folder: &str) -> BoxFut {
     let mut response = Response::new(Body::empty());
@@ -103,10 +103,10 @@ fn main() {
         .unwrap_or_else(|| String::from("3000"));
 
     if first_arg == "--help" || first_arg == "-h" {
-        println!("st - Serve a static folder");
+        println!("se - Serve a static folder");
         println!();
         println!("Usage:");
-        println!("    st <port> <folder>");
+        println!("    se <port> <folder>");
         return;
     }
 

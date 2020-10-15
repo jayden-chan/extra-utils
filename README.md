@@ -13,24 +13,24 @@ cargo install extra-utils
 
 ## Commands
 
-### st
+### se
 A simple HTTP server that serves a static folder
 
-Usage: `st [port] [folder]`
+Usage: `se [port] [folder]`
 
 The default port is 3000 and the default folder is `.` (current folder)
 
 If only one argument is provided, its purpose will be inferred:
 ```
-st build
+se build
 ```
 will serve the "build" folder on port 3000 and:
 ```
-st 8080
+se 8080
 ```
 will serve the current folder on port 8080.
 
-If the requested file doesn't exist, `st` will attempt to fallback to
+If the requested file doesn't exist, `se` will attempt to fallback to
 `{folder}/404.html`. Failing that, it will return HTTP `404` with an empty body.
 
 ### ts
