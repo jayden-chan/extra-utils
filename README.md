@@ -1,4 +1,4 @@
-# extra-utils
+# extra-utils [![crates.io][Crate Logo]][Crate]
 
 This repository contains some handy command line utilities that aren't included in the
 GNU coreutils. They follow the UNIX philosophy.
@@ -57,3 +57,6 @@ Usage: `your_command | nr [minwidth] [offset]`
 `minwidth` is the minimum width of the number column. Default: 0
 
 `offset` is the starting index of the line numbers. Default: 1
+
+[Crate]: https://crates.io/crates/extra-utils
+[Crate Logo]: https://img.shields.io/crates/v/extra-utils?style=flat-square
